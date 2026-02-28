@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { getApiEndpoint } from '../api';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/users/`;
+  const endpoint = getApiEndpoint('users');
 
   useEffect(() => {
     fetch(endpoint)

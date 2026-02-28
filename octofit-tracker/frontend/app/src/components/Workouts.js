@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { getApiEndpoint } from '../api';
 
 const Workouts = () => {
   const [workouts, setWorkouts] = useState([]);
-  const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`;
+  const endpoint = getApiEndpoint('workouts');
 
   useEffect(() => {
     fetch(endpoint)
